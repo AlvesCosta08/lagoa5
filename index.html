@@ -17,114 +17,120 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/custom.css">
-    <style>
-        .cta-btn {
-            background-color: #a83a32; /* Usando a cor padrão */
-            color: white;
-            transition: background-color 0.3s;
-        }
-
-        .cta-btn:hover {
-            background-color: #c83f36; /* Cor mais clara ao passar o mouse */
-        }
-
-        .section-title {
-            margin-bottom: 1.5rem;
-            font-size: 2.5rem;
-            color: #a83a32; /* Cor padrão */
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        }
-
-        footer a.social-icon {
-            color: white;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-
-        footer a.social-icon:hover {
-            color: #c83f36; /* Cor mais clara ao passar o mouse */
-        }
-    </style>
 </head>
 <body>
 
 <header class="d-flex align-items-center position-relative overflow-hidden" style="height: 100vh;">
-    <video autoplay loop muted playsinline class="w-100 h-100" style="object-fit: cover;">
+    <video autoplay loop muted playsinline class="w-100 h-100 position-absolute" style="object-fit: cover; filter: brightness(0.6);">
         <source src="./videos/montese.mp4" type="video/mp4">
         Seu navegador não suporta a tag de vídeo.
     </video>
-    
+
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark position-absolute w-100" style="top: 0;">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: rgba(0, 0, 0, 0.8);">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="./imagem/logo_principal.png" alt="Logo AD Montese" style="height: 150px;">
+                <img id="logo_pricipal" src="./imagem/logo_principal.png" alt="Logo AD Montese" class="logo-img">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#agenda">Agenda</a>
+                        <a class="nav-link text-light" href="#agenda">Agenda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#audio">Rádio Web</a>
+                        <a class="nav-link text-light" href="#audio">Rádio Web</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#transmissao">Transmissão ao Vivo</a>
+                        <a class="nav-link text-light" href="#transmissao">Transmissão ao Vivo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#localizacao">Localização</a>
+                        <a class="nav-link text-light" href="#localizacao">Localização</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    
-    <div class="d-flex flex-column justify-content-center align-items-center h-100 w-50 text-center" 
-         style="color: white; text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7); 
-                background: url('./imagem/adoracao.jpg') no-repeat center center/cover; 
-                padding: 20px;">
-        <h4 class="display-8">Bem-vindo à AD Montese Lagoa 5</h4>
-        <p class="lead" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">Uma Igreja com Visão Missionária</p>
-        <a href="#agenda" class="btn cta-btn btn-lg">Confira Nossa Agenda</a>
+
+    <!-- Texto principal -->
+    <div class="text-center position-relative z-index-1" style="max-width: 700px; margin: auto;">
+        <h1 class="display-4 text-white fw-bold bg-opacity-75 p-3 rounded">
+            Bem-vindo à AD Montese Lagoa 5
+        </h1>
+        <p class="lead text-white bg-opacity-50 p-2 rounded">
+            Uma Igreja com Visão Missionária
+        </p>
+        <a href="#agenda" class="btn btn-lg mt-4 btn-primary">
+            Confira Nossa Agenda
+        </a>
     </div>
 </header>
 
 <main class="container my-5">
-    <section id="agenda">
-        <h2 class="section-title text-center">Agenda da Semana</h2>
-        <div class="row">
-            <div class="col-md-6 mb-4">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <h5 class="card-title">Domingo</h5>
-                        <p class="card-text">Culto às 9h</p>
+    <section id="agenda" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Agenda da Semana</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-5 col-lg-4">
+                    <div class="card text-center shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase mb-3" style="color: #a83a32;">
+                                <i class="fas fa-church me-2"></i>Domingo
+                            </h5>
+                            <p class="card-text">Culto Evangelístico às 9h</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <h5 class="card-title">Segunda</h5>
-                        <p class="card-text">Reunião de Oração às 19h</p>
+                <div class="col-md-5 col-lg-4">
+                    <div class="card text-center shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase mb-3" style="color: #a83a32;">
+                                <i class="fas fa-praying-hands me-2"></i>Segunda
+                            </h5>
+                            <p class="card-text">Reunião de Oração às 19h</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <h5 class="card-title">Quarta</h5>
-                        <p class="card-text">Estudo Bíblico às 19h</p>
+                <div class="col-md-5 col-lg-4">
+                    <div class="card text-center shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase mb-3" style="color: #a83a32;">
+                                <i class="fas fa-book-open me-2"></i>Terça
+                            </h5>
+                            <p class="card-text">Doutrina às 19h</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <h5 class="card-title">Sábado</h5>
-                        <p class="card-text">Encontro de Jovens às 18h</p>
+                <div class="col-md-5 col-lg-4">
+                    <div class="card text-center shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase mb-3" style="color: #a83a32;">
+                                <i class="fas fa-music me-2"></i>Quinta
+                            </h5>
+                            <p class="card-text">Louvor & Adoração às 19h</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4">
+                    <div class="card text-center shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase mb-3" style="color: #a83a32;">
+                                <i class="fas fa-users me-2"></i>3º Sábado de cada mês
+                            </h5>
+                            <p class="card-text">Encontro de Senhoras às 18h</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4">
+                    <div class="card text-center shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase mb-3" style="color: #a83a32;">
+                                <i class="fas fa-bread-slice me-2"></i>2º Domingo de cada mês
+                            </h5>
+                            <p class="card-text">Ceia do Senhor às 18h</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -139,36 +145,42 @@
         <p class="text-center mt-2">Assista nossos cultos ao vivo todos os domingos às 9h!</p>
     </section>
 
-    <section id="audio" class="my-5">
-        <h2 class="section-title text-center">Rádio Web</h2>
-        <div class="text-center">
-            <audio controls>
+
+
+    <section id="audio" class="my-5 p-4" style="background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+        <h2 class="section-title text-center mb-4 text-danger">Rádio Web</h2>
+        <div class="text-center mb-4">
+            <i class="fas fa-headphones-alt fa-3x text-primary" aria-hidden="true"></i>
+        </div>
+        <div class="audio-player text-center">
+            <audio controls class="w-50" style="max-width: 300px; border: 2px solid #a83a32; border-radius: 10px; transition: border-color 0.3s;">
                 <source src="http://uk6freenew.listen2myradio.com:15183/stream" type="audio/aac">
                 <source src="http://uk6freenew.listen2myradio.com:15183/stream" type="audio/mpeg">
                 Seu navegador não suporta o elemento de áudio.
             </audio>
         </div>
-        <p class="text-center mt-2">Ouça nossos cultos e mensagens a qualquer momento!</p>
+        <p class="text-center mt-3 text-muted">Ouça nossos cultos e mensagens a qualquer momento!</p>
     </section>
-
-    <section id="contato" class="my-5">
-        <h2 class="section-title text-center">Entre em Contato</h2>
-        <form>
-            <div class="mb-3">
-                <label for="name" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="name" required>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" required>
-            </div>
-            <div class="mb-3">
-                <label for="message" class="form-label">Mensagem</label>
-                <textarea class="form-control" id="message" rows="3" required></textarea>
-            </div>
-            <button type="submit" class="btn cta-btn">Enviar</button>
-        </form>
-    </section>
+    
+    
+<section id="contato" class="my-5 p-4" style="background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+    <h2 class="section-title text-center mb-4 text-danger">Entre em Contato</h2>
+    <form>
+        <div class="mb-3">
+            <label for="name" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="name" required style="transition: border-color 0.3s;">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required style="transition: border-color 0.3s;">
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Mensagem</label>
+            <textarea class="form-control" id="message" rows="3" required style="transition: border-color 0.3s;"></textarea>
+        </div>
+        <button type="submit" class="btn btn-danger" style="transition: background-color 0.3s, transform 0.3s;">Enviar</button>
+    </form>
+</section>
 
     <section id="localizacao" class="my-5">
         <h2 class="section-title text-center">Localização</h2>
@@ -176,19 +188,22 @@
     </section>
 </main>
 
-<footer class="bg-primary text-white text-center py-4">
+<footer class="bg-dark text-white text-center py-4">
     <p>© 2024 Assembleia de Deus Montese - Lagoa 5. Todos os direitos reservados.</p>
+    <p>Rua Lagoa5, S/N Jacauna - Iguape-CE.</p>
     <div>
-        <a href="#" class="social-icon me-3"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/ad.montese.setor.27" class="social-icon me-3"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="social-icon me-3 text-white"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/ad.montese.setor.27" class="social-icon me-3 text-white"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon text-white"><i class="fab fa-youtube"></i></a>
     </div>
 </footer>
+
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
+
 
 
 
