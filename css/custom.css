@@ -1,0 +1,30 @@
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        header {
+            background: url('./imagem/background.jpg') no-repeat center center/cover;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .social-icon {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        .social-icon:hover {
+            color: #a83a32;
+        }
+        .cta-btn {
+            background-color: #a83a32;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        .cta-btn:hover {
+            background-color: #8a2e27;
+        }
+        .section-title {
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #a83a32;
+        }
+
