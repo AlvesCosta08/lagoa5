@@ -17,6 +17,46 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/custom.css">
+    <style>
+        /* Estilo para as mensagens */
+        .chat-message {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+            word-wrap: break-word;
+        }
+    
+        /* Estilo para mensagens do usuário */
+        .user-message {
+            background-color: #00aaff;
+            color: #fff;
+            text-align: right;
+        }
+    
+        /* Estilo para mensagens do chatbot */
+        .bot-message {
+            background-color: #444;
+            color: #fff;
+            text-align: left;
+        }
+    
+        /* Estilo do chat box */
+        #chat-box {
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 15px;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
 </head>
 <body>
 
@@ -24,48 +64,86 @@
     <video autoplay loop muted playsinline class="w-100 h-100 position-absolute" style="object-fit: cover; filter: brightness(0.6);">
         <source src="./videos/montese.mp4" type="video/mp4">
         Seu navegador não suporta a tag de vídeo.
-    </video>
+    </video>    
 
+    
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: rgba(0, 0, 0, 0.8);">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: rgba(36, 122, 213, 0.9); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img id="logo_pricipal" src="./imagem/logo_principal.png" alt="Logo AD Montese" class="logo-img">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img id="logo_principal" src="./imagem/logo_principal.png" alt="Logo AD Montese" class="logo-img" style="height: 70px; margin-right: 10px;">
+                <span style="font-weight: bold; font-size: 1.2rem; color: white;">AD Montese</span>
             </a>
+
+            <!-- Toggle Button for Mobile -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse justify-content-between align-items-center" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Player -->
+                    <li class="nav-item me-3">
+
+                    </li>
+
+                    <!-- Links -->
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#agenda">Agenda</a>
+                        <a class="nav-link text-white fw-bold" href="#agenda">Agenda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#audio">Rádio Web</a>
+                        <a class="nav-link text-white fw-bold" href="#transmissao">Transmissão ao Vivo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#transmissao">Transmissão ao Vivo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#localizacao">Localização</a>
+                        <a class="nav-link text-white fw-bold" href="#localizacao">Localização</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+<!-- Texto principal -->
+<div class="container text-center position-relative z-index-1">
+    <!-- Título da Web Rádio -->
+    <h1 class="display-4 text-white fw-bold bg-opacity-75 p-3 rounded mb-4">
+        Web Rádio Sintonizados em Jesus
+    </h1>
 
-    <!-- Texto principal -->
-    <div class="text-center position-relative z-index-1" style="max-width: 700px; margin: auto;">
-        <h1 class="display-4 text-white fw-bold bg-opacity-75 p-3 rounded">
-            Bem-vindo à AD Montese Lagoa 5
-        </h1>
-        <p class="lead text-white bg-opacity-50 p-2 rounded">
-            Uma Igreja com Visão Missionária
-        </p>
-        <a href="#agenda" class="btn btn-lg mt-4 btn-primary">
-            Confira Nossa Agenda
-        </a>
+    <!-- Seção com logo e play -->
+    <div class="d-flex justify-content-center align-items-center mb-4 flex-column flex-md-row">
+        <!-- Logo da Web Rádio -->        
+
+        <!-- Player da Web Rádio -->
+        <div class="text-center mt-3">
+            <h2 class="text-white fw-bold">Acompanhe nossa programação</h2>
+            <p class="text-white-50">Ouça ao vivo e fique por dentro das novidades.</p>
+            
+            <!-- Player centralizado -->
+            <div class="d-flex justify-content-center">
+                <script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
+                <script type="text/javascript">
+                    MRP.insert({
+                        'url': 'https://s03.transmissaodigital.com:6814/stream',
+                        'codec': '',
+                        'volume': 100,
+                        'autoplay': true,
+                        'forceHTML5': true,
+                        'jsevents': false,
+                        'buffering': 0,
+                        'title': 'Web Radio Sintonizados em Jesus',
+                        'wmode': 'transparent',
+                        'skin': 'abrahadabra2',
+                        'width': 100,
+                        'height': 141
+                    });
+                </script>
+            </div>
+        </div>
     </div>
+</div>
+  
+    
 </header>
 
 <main class="container my-5">
@@ -79,7 +157,7 @@
                             <h5 class="card-title text-uppercase mb-3" style="color: #a83a32;">
                                 <i class="fas fa-church me-2"></i>Domingo
                             </h5>
-                            <p class="card-text">Culto Evangelístico às 9h</p>
+                            <p class="card-text">Culto Evangelístico às 18h</p>
                         </div>
                     </div>
                 </div>
@@ -89,7 +167,7 @@
                             <h5 class="card-title text-uppercase mb-3" style="color: #a83a32;">
                                 <i class="fas fa-praying-hands me-2"></i>Segunda
                             </h5>
-                            <p class="card-text">Reunião de Oração às 19h</p>
+                            <p class="card-text">Escola Bíblica 19h</p>
                         </div>
                     </div>
                 </div>
@@ -119,7 +197,7 @@
                             <h5 class="card-title text-uppercase mb-3" style="color: #a83a32;">
                                 <i class="fas fa-users me-2"></i>3º Sábado de cada mês
                             </h5>
-                            <p class="card-text">Encontro de Senhoras às 18h</p>
+                            <p class="card-text">Encontro de Senhoras às 19h</p>
                         </div>
                     </div>
                 </div>
@@ -138,49 +216,65 @@
     </section>
 
     <section id="transmissao" class="my-5">
-        <h2 class="section-title text-center">Transmissão ao Vivo</h2>
-        <div class="text-center">
-            <iframe width="100%" height="400" src="https://www.youtube.com/embed/live_stream?channel=SEU_CANAL_ID" frameborder="0" allowfullscreen></iframe>
+        <h2 class="section-title text-center">Web TV</h2>
+        <div class="stream-wrapper text-center">
+            <!-- Container para o player -->
+            <div class="stream-player" id="stream-container">
+                <iframe 
+                    id="stream"
+                    class="stream-frame"
+                    width="100%" 
+                    height="400"
+                    src=""
+                    frameborder="0" 
+                    allowfullscreen>
+                </iframe>
+                <div id="no-stream" class="no-stream-message">
+                    <p>A transmissão não está disponível no momento.</p>
+                </div>
+            </div>
+            <!-- Rodapé semelhante ao YouTube -->
+            <div class="stream-info">
+                <h4 class="stream-title">Transmissões ao Vivo</h4>
+                <p class="stream-description">Descrição da transmissão ou informações adicionais sobre o conteúdo.</p>
+            </div>
         </div>
-        <p class="text-center mt-2">Assista nossos cultos ao vivo todos os domingos às 9h!</p>
     </section>
 
-
-
-    <section id="audio" class="my-5 p-4" style="background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
-        <h2 class="section-title text-center mb-4 text-danger">Rádio Web</h2>
-        <div class="text-center mb-4">
-            <i class="fas fa-headphones-alt fa-3x text-primary" aria-hidden="true"></i>
+    <section id="radio-chat" class="my-5 p-4" style="background: linear-gradient(to bottom, #fef9e7, #fff); border-radius: 10px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+        <!-- Cabeçalho com logo e slogan -->
+        <div class="header text-center mb-4">
+            <img src="./imagem/logo_principal.png" alt="Logo da Rádio" class="rounded-circle mb-3" style="width: 80px;">
+            <h2 class="text-danger fw-bold">Web Rádio Sintonizados em Jesus</h2>
+            <p class="text-secondary">🎶 <em>A sua rádio de todos os momentos!</em></p>
         </div>
-        <div class="audio-player text-center">
-            <audio controls class="w-50" style="max-width: 300px; border: 2px solid #a83a32; border-radius: 10px; transition: border-color 0.3s;">
-                <source src="http://uk6freenew.listen2myradio.com:15183/stream" type="audio/aac">
-                <source src="http://uk6freenew.listen2myradio.com:15183/stream" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
+    
+        <!-- Mensagem de Boas-vindas -->
+        <div id="welcome-message" class="bg-warning-subtle text-dark p-3 rounded shadow-sm mb-4">
+            <p class="mb-0">👋 Bem-vindo ao chat da Web Rádio Sintonizados em Jesus! Peça sua música, envie recados ou fale com o locutor ao vivo.</p>
         </div>
-        <p class="text-center mt-3 text-muted">Ouça nossos cultos e mensagens a qualquer momento!</p>
+    
+        <!-- Chat Box -->
+        <div id="chat-box" class="p-3 bg-dark text-light rounded shadow-sm mb-4" style="max-height: 400px; overflow-y: auto;">
+            <div class="text-center text-muted fst-italic">Nenhuma mensagem ainda. Fale com a gente!</div>
+        </div>
+    
+        <!-- Botões Rápidos -->
+        <div class="quick-buttons d-flex justify-content-center gap-2 mb-3">
+            <button class="btn btn-warning" onclick="quickMessage('Gostaria de pedir uma música')">🎵 Pedir Música</button>
+            <button class="btn btn-info" onclick="quickMessage('Quero mandar um recado')">📩 Enviar Recado</button>
+        </div>
+    
+        <!-- Formulário do Chat -->
+        <form id="chat-form" class="d-flex gap-2" onsubmit="return sendMessage(event)">
+            <input type="text" id="user-input" class="form-control" placeholder="Digite sua mensagem..." required>
+            <button type="submit" class="btn btn-danger fw-bold">Enviar</button>
+        </form>
     </section>
     
+
     
-<section id="contato" class="my-5 p-4" style="background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
-    <h2 class="section-title text-center mb-4 text-danger">Entre em Contato</h2>
-    <form>
-        <div class="mb-3">
-            <label for="name" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="name" required style="transition: border-color 0.3s;">
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" required style="transition: border-color 0.3s;">
-        </div>
-        <div class="mb-3">
-            <label for="message" class="form-label">Mensagem</label>
-            <textarea class="form-control" id="message" rows="3" required style="transition: border-color 0.3s;"></textarea>
-        </div>
-        <button type="submit" class="btn btn-danger" style="transition: background-color 0.3s, transform 0.3s;">Enviar</button>
-    </form>
-</section>
+    
 
     <section id="localizacao" class="my-5">
         <h2 class="section-title text-center">Localização</h2>
@@ -198,9 +292,60 @@
     </div>
 </footer>
 
+<script>
+    const chatBox = document.getElementById("chat-box");
+    const userInput = document.getElementById("user-input");
+    const chatForm = document.getElementById("chat-form");
+
+    function appendMessage(content, sender) {
+        const messageDiv = document.createElement("div");
+        messageDiv.className = sender === "user" ? "text-end mb-2" : "text-start mb-2";
+        messageDiv.innerHTML = `
+            <span class="${sender === 'user' ? 'badge bg-danger' : 'badge bg-primary'} p-2 rounded">${content}</span>
+        `;
+        chatBox.appendChild(messageDiv);
+        chatBox.scrollTop = chatBox.scrollHeight; // Rolagem automática para a última mensagem
+    }
+
+    async function sendMessage(event) {
+        event.preventDefault();
+        const message = userInput.value.trim();
+
+        if (!message) return;
+
+        // Adicionar mensagem do usuário no chat
+        appendMessage(message, "user");
+        userInput.value = ""; // Limpar o campo de entrada
+
+        // Exibir "Aguardando resposta..."
+        appendMessage("Aguardando resposta...", "bot");
+
+        try {
+            const response = await fetch("http://127.0.0.1:8000/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ user_message: message }),
+            });
+
+            const data = await response.json();
+            const botReply = data.bot_reply || "Desculpe, não consegui entender sua mensagem.";
+            appendMessage(botReply, "bot"); // Adicionar resposta do bot ao chat
+        } catch (error) {
+            console.error("Erro:", error);
+            appendMessage("Erro ao se conectar ao servidor. Tente novamente mais tarde.", "bot");
+        }
+    }
+
+    function quickMessage(text) {
+        userInput.value = text;
+        const event = new Event("submit");
+        chatForm.dispatchEvent(event);
+    }
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>
 

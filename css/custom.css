@@ -1,54 +1,343 @@
+/* Resetando margens e padding */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo do site */
 body {
     font-family: 'Arial', sans-serif;
-    padding-top: 80px; /* Espaçamento para a navbar */
+    background-color: #121212; /* Escuro mais moderno */
+    color: #EAEAEA; /* Texto claro */
+    line-height: 1.6;
 }
 
+/* Estilo do header */
 header {
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    background: #333; /* Cinza escuro */
 }
 
-.logo-img {
-    height: 80px; 
-    transition: transform 0.3s, filter 0.3s;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+header video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.4);
 }
 
-.navbar-brand:hover .logo-img {
-    transform: scale(1.05);
+header .navbar {
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease;
 }
 
-.section-title {
-    color: #a83a32;
+header .navbar:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+#logo_principal {
+    height: 90px;
+    margin-right: 10px;
+    margin-top: -21px;
+}
+
+.navbar .nav-item a {
+    color: #EAEAEA; /* Cor suave para os links */
     font-weight: bold;
-    margin-bottom: 1.5rem;
-}
-
-.card {
-    border-radius: 10px;
-}
-
-.social-icon {
-    color: white;
-    font-size: 24px;
+    margin-left: 20px;
+    text-transform: uppercase;
     transition: color 0.3s;
 }
 
-.social-icon:hover {
-    color: #a83a32; /* Mudança de cor ao passar o mouse */
-}
-#logo_pricipal{
-    margin-top: -25px;
+.navbar .nav-item a:hover {
+    color: #00B0FF; /* Azul mais vivo */
 }
 
-    /* Estilo adicional para os inputs e textarea */
-    .form-control:focus {
-        border-color: #a83a32; /* Cor da borda ao focar */
-        box-shadow: 0 0 5px rgba(168, 58, 50, 0.5); /* Sombra ao focar */
+/* Estilo do texto principal */
+.text-center h1 {
+    font-size: 3rem;
+    color: #fff;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.text-center p {
+    font-size: 1.2rem;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+/* Botão */
+.btn-primary {
+    background-color: #00B0FF; /* Azul mais vivo */
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #009ACD; /* Azul mais intenso */
+    transform: translateY(-5px);
+}
+
+/* Estilo para o player de rádio */
+#player-container {
+    margin-top: -10px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 300px;
+}
+
+audio {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Seções */
+section {
+    padding: 40px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #00B0FF; /* Azul mais vivo */
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.card {
+    background-color: #1D1D1D; /* Fundo escuro mais suave */
+    border: none;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    color: #00B0FF; /* Azul mais vivo */
+}
+
+.card-text {
+    color: #B0B0B0; /* Cinza suave */
+}
+
+.card i {
+    color: #00B0FF; /* Azul mais vivo */
+}
+
+/* Formulário de Contato */
+form {
+    background-color: #1D1D1D; /* Fundo escuro mais suave */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.form-label {
+    color: #EAEAEA; /* Texto claro */
+}
+
+.form-control {
+    background-color: #333; /* Fundo mais suave */
+    border: 1px solid #555;
+    color: #EAEAEA;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #00B0FF; /* Azul para foco */
+}
+
+button[type="submit"] {
+    background-color: #00B0FF; /* Azul vivo */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #009ACD; /* Azul mais intenso */
+    transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+    background-color: #101010; /* Fundo escuro */
+    color: #EAEAEA; /* Texto claro */
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+footer .social-icon {
+    font-size: 1.5rem;
+    color: #EAEAEA;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+footer .social-icon:hover {
+    color: #00B0FF; /* Azul vivo */
+}
+
+#transmissao {
+    position: relative;
+    background-color: #f2f2f2; /* Fundo padrão */
+}
+
+/* Quando o iframe não estiver com a URL de transmissão, mostra a mensagem de fundo */
+#no-stream {
+    display: none;
+    background-color: #ccc; /* Cor de fundo para quando não houver transmissão */
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: #333;
+}
+
+/* Quando o iframe tem conteúdo (transmissão ativa), esconde a mensagem */
+#stream[src]:not([src=""]) {
+    display: block;
+}
+
+#no-stream {
+    display: none;
+}
+
+/* Caso o iframe esteja vazio ou sem transmissão, mostre o "no-stream" */
+#stream[src=""]:not([src=""]) + #no-stream {
+    display: flex;
+}
+  /* Estilo para a seção */
+  #transmissao {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.stream-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.stream-player {
+    position: relative;
+}
+
+.stream-frame {
+    width: 100%;
+    height: 400px;
+    border: none;
+}
+
+.no-stream-message {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#stream[src=""] ~ .no-stream-message {
+    display: flex;
+}
+
+.stream-info {
+    padding: 10px 15px;
+    text-align: left;
+    border-top: 1px solid #ddd;
+}
+
+.stream-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #222;
+    margin: 5px 0;
+}
+
+.stream-description {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header .navbar-brand {
+        display: block;
+        text-align: center;
     }
 
-    /* Efeito de hover para o botão */
-    .btn-danger:hover {
-        background-color: #a83a32; /* Muda a cor ao passar o mouse */
-        transform: scale(1.05); /* Aumenta o tamanho levemente */
+    header .navbar .nav-item {
+        margin-left: 0;
+        margin-top: 15px;
     }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+}
+
+
+
